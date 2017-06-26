@@ -6,4 +6,4 @@ git clone https://github.com/hemna/docker-weewx
 cd docker-weewx
 docker build -t hemna/weewx .
 
-docker run -d --name weewx -v <path to host archive dir to store DB>:/home/weewx/archive hemna/weewx
+docker run -d --name weewx -v <path to >/docker-weewx/archive:/home/weewx/archive -v /dev/bus/usb:/dev/bus/usb --privileged hemna/weewx
