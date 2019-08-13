@@ -13,7 +13,7 @@ RUN apt-get install -y sqlite3 curl wget \
     python-configobj python-cheetah python-pil \
     python-serial python-usb python-mysqldb git \
     build-essential apache2 python-dev xtide xtide-data \
-    rsyslog logrotate
+    rsyslog logrotate fonts-roboto
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=US/Eastern
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone

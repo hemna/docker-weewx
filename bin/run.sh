@@ -13,8 +13,11 @@ CONF_FILE=$HOME/weewx.conf
 ls -la
 ls -al $HOME/bin
 
+echo "Installing NeoWX skin"
+wget -O $HOME/neowx.zip https://projects.neoground.com/neowx/download/latest
+$HOME/bin/wee_extension --install=neowx.zip
+
 cd $HOME
 CMD="$HOME/bin/weewxd --log-label weewx-hemna $CONF_FILE"
 echo "Running '$CMD'"
-
 $HOME/bin/weewxd --log-label weewx-hemna $CONF_FILE
