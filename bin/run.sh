@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 service apache2 start
+service rsyslog restart
 
 # HOME=/home/weewx is set by the Dockerfile but can be overridden in run command
 echo "using $CONF"
@@ -13,7 +14,7 @@ ls -la
 ls -al $HOME/bin
 
 cd $HOME
-CMD="$HOME/weewx/bin/weewxd $CONF_FILE"
+CMD="$HOME/bin/weewxd --log-label weewx-hemna $CONF_FILE"
 echo "Running '$CMD'"
 
-$HOME/bin/weewxd $CONF_FILE
+$HOME/bin/weewxd --log-label weewx-hemna $CONF_FILE
